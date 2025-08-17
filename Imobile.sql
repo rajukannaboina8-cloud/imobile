@@ -77,5 +77,21 @@ INSERT INTO [dbo].[Mobiles] (brand, model, storage_gb, ram_gb, color, price, pur
 ('Google', 'Pixel 1', 32, 3, 'Black', 149.99, 99.99, 20, 'No', '2017-09-01');
 
 
+select * from [Mobiles]
 
+
+
+--Profit Calculation
+  select * ,price-purchase_price Profit from [Mobiles]
+ -- 2. Total Stock Value (Selling Price)
+   
+        
+        SELECT model, price * stock_quantity AS total_value
+FROM [dbo].[Mobiles];
+        
+        select*,  purchase_price*stock_quantity as StockValue from [Mobiles]
+
+        --3. Discounted Price (10% discount)
+        select brand, model,purchase_price,price , price-(price*0.1) as FinalPrice from [Mobiles]
+ --4. Markup Percentage
 
